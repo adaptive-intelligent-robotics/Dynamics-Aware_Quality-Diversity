@@ -23,3 +23,31 @@ However, for probablistic ensemble which performs the ensemble in parallelized m
 5. Evaluate those policies in the environment.
 6. Use the data collected from those policies to update the model.
 7. Update the repertoire.
+
+## Documentation on code structure
+
+### Main algorithm class MBQD
+
+The main class `ModelBasedQD` (present in `src/map_elites/mbqd`) takes as argument all the components:
+  - Environment
+  - Data collector (Rollout collector)
+  - Policy/Actor
+  - Dynamics_model, Dynamics Model Trainer
+  - Replay buffer
+
+Its `compute` method runs the main algorithm loop, consisting of:
+1. Initialization of the repertoire with random policies
+2. Copy this repertoire to produce an imagined repertoire.
+3. Performing QD in imagination with this imagined repertoire.
+4. Selection from the imagined repertoire.
+5. Act in environment - evaluate selected solutions.
+6. Update model/train model.
+
+
+### Archive
+
+- `src/map_elites/archive.py` contains the class `Archive` which is essentially just a container in the form of a python list containing individuals. Those individuals are instances of the `Species` class (implemented in `src/map_elites/common.py`).
+
+### Selectors
+
+- `src/map_elites/selectors.py` contains the functions for selection from the imagined repertoire i.e. UCB selector based on some metric
