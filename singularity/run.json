@@ -1,0 +1,7 @@
+{
+ "wall_time" : "23:25:00",
+ "nb_cores" : "32",
+ "mem" : "62gb",
+ "nb_runs" : "10",
+ "sync" : {"period_seconds": "3600", "interrupt_main": "no"}
+}
