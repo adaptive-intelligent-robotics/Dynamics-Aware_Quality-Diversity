@@ -1,12 +1,14 @@
 # Dynamics-Aware Quality-Diversity (DA-QD)
+Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Paper]() 
 
-Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Paper link]() 
+
 Performing Quality-Diversity (QD) optimisation using learnt models, to reduce the number of evaluations/trials/sampled needed during QD skill discovery.
 DA-QD allows QD to be performed in imagination, to discover and only executte novel or higher-performing skills.
 
 ## Dependencies and Installation
-We reccommend using singularity containers to easily run this code. The singularity directory contains all the required files to build a container (i.e. singularity.def).
-The code and experiments in this repository uses the DART simulator and RobotDART wrapper. If you want to build this without a singularity container, all the dependencies can be found in the singularity.def file. 
+We recommend using singularity containers to easily run this code. The singularity directory contains all the required files to build a container (i.e. singularity.def).
+The code and experiments in this repository uses the [DART](https://dartsim.github.io) physics simulator and [RobotDART](https://github.com/resibots/robot_dart) wrapper.
+If you want to build this without a singularity container, all the dependencies can be found in the singularity.def file. 
 
 ## How to run the code?
 1. Create a directory or identify directory in which to store results (i.e. $tmp_dir) 
@@ -15,9 +17,12 @@ The code and experiments in this repository uses the DART simulator and RobotDAR
 ```python3 hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000```
 
 3. For analysis and visualization of results, use:
+
 ```python3 vis_repertoire_hexapod.py --archive_519.dat --plot_type grid``` to view the resulting repertoire.
 This is also an interactive plot which shows the resulting skill/behaviour in a rendered simulation when you select a skill in the repertoire.
+
 and
+
 ```python3 analysis.py``` to view the performance curves for QD-score and coverage metrics.
 
 ## Documentation on code structure
