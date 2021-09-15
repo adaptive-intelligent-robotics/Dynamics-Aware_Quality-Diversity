@@ -147,7 +147,7 @@ def main(args):
     action_dim = 18
     
     # Deterministic = "det", Probablistic = "prob" 
-    dynamics_model_type = "prob" 
+    dynamics_model_type = "det" 
     dynamics_model, dynamics_model_trainer = get_dynamics_model(dynamics_model_type)
     surrogate_model, surrogate_model_trainer = get_surrogate_model()
 
@@ -157,7 +157,10 @@ def main(args):
                      ctrl_freq=100)
     
     f_real = env.evaluate_solution # maybe move f_real and f_model inside
-    f_model = env.evaluate_solution_model_ensemble #_ensemble 
+    if dynamics_model_type == "det":
+        f_model = env.evaluate_solution_model
+    elif dynamics_model_type == "prob":
+	f_model = env.evaluate_solution_model_ensemble
     
     # initialize replay buffer
     replay_buffer = SimpleReplayBuffer(

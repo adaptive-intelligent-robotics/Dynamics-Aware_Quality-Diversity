@@ -124,7 +124,7 @@ def main(args):
         # If it is larger than the nov_l value, we are imposing that the model must predict something more novel than we would normally have before even trying it out
         # fitness is always positive - so t_qua
 
-        "model_variant": "direct", #"direct", # "dynamics" or "direct"  
+        "model_variant": "dynamics", #"direct", # "dynamics" or "direct"  
         "train_model_on": True, #                                                                              
         "train_freq": 40, # train at a or condition between train freq and evals_per_train
         "evals_per_train": 500,
@@ -142,7 +142,7 @@ def main(args):
     action_dim = 18
     
     # Deterministic = "det", Probablistic = "prob" 
-    dynamics_model_type = "det"
+    dynamics_model_type = "prob"
 
     print("Dynamics model type: ", dynamics_model_type) 
     dynamics_model, dynamics_model_trainer = get_dynamics_model(dynamics_model_type)
