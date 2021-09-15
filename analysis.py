@@ -9,61 +9,6 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from seaborn.relational import _LinePlotter
 
-#variant_names = ["me_baseline","mb_me", "me_baseline_10hz" ]
-#variant_names = ["me_baseline/2021-02-03_100Hz_5s_pi8", "me_baseline/2021-02-05_10Hz_3s_pi4", "me_baseline/2021-02-05_100Hz_3s_pi4"]
-
-#variant_names = ["me_baseline_v2/log_dir_results/", "direct_nn_me/log_dir_results/", "det_dyn_me/log_dir_results/", "me_baseline/2021-02-05_100Hz_3s_pi4"]
-
-variant_names = ["direct_nn_me",
-                 "me_baseline_v2/",
-                 "det_dyn_me/",
-                 "det_dyn_me_2/",
-                 "det_dyn_me_4/"
-                 "det_dyn_me_batch/",
-                 "det_dyn_me_batch_2/",
-                 "me_baseline/2021-02-05_100Hz_3s_pi4"]
-
-variant_names = ["me_baseline_v2/",
-                 "det_dyn_me/",
-                 "det_dyn_me_2/",
-                 "det_dyn_me_3/",
-                 "det_dyn_me_4/",
-                 "det_dyn_me_5_trainfreq5/",
-                 "det_dyn_me_6_trainfreq10/",]
-
-variant_names = ["me_baseline_v2/",
-                 "direct_nn_stats/",
-                 "det_dyn_me_trainfreq50_nostats/",
-                 "det_dyn_me_trainfreq20_nostats/",
-                 "det_dyn_me_trainfreq50_rand_emit/",]
-
-
-variant_names = ["me_baseline_v2/",
-                 "direct_nn_me",
-                 "det_dyn_me_trainfreq50_rand_emit_update/",
-                 "addition_condition_baseline",]
-
-
-variant_names = ["random_exploration/",
-                 "vanilla_me/",
-                 "direct_nn_me_archcond/",
-                 "dyn_model_me_det_archcond/",
-                 "dyn_model_me_probens_archcond/",
-                 "dyn_model_me_probens_archcond_2/",
-                 "dyn_model_me_probens_threshcond/",]
-
-
-variant_names = ["random_exploration/",
-                 "vanilla_me/",
-                 "direct_nn_me_archcond/",
-                 "dyn_model_me_det_archcond/",
-                 "dyn_model_me_probens_archcond_2/",
-                 #"direct_nn_me_threshcond/",
-                 #"dyn_model_me_det_threshcond/",
-                 #"dyn_model_me_probens_threshcond/",
-]
-
-
 variant_names = ["random_exploration/",
                  "vanilla_me/",
                  "direct_model_archcond/",

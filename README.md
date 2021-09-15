@@ -1,18 +1,24 @@
 # Dynamics-Aware Quality-Diversity (DA-QD)
 
-Project repository for Dynamics-Aware Quality-Diversity (DA-QD). 
-Performing Quality-Diversity (QD) optimisation using learnt models, to save efficiency on the number of QD evaluations.
-Allows QD to be performed in imagination, discover and only executte novel or higher-performing skills.
+Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Paper link]() 
+Performing Quality-Diversity (QD) optimisation using learnt models, to reduce the number of evaluations/trials/sampled needed during QD skill discovery.
+DA-QD allows QD to be performed in imagination, to discover and only executte novel or higher-performing skills.
 
 ## Dependencies and Installation
 We reccommend using singularity containers to easily run this code. The singularity directory contains all the required files to build a container (i.e. singularity.def).
 The code and experiments in this repository uses the DART simulator and RobotDART wrapper. If you want to build this without a singularity container, all the dependencies can be found in the singularity.def file. 
 
 ## How to run the code?
-1. Create a directory or identify directory in which to store results.
-2. Run:
+1. Create a directory or identify directory in which to store results (i.e. $tmp_dir) 
+
+2. Run the line below for skill-discovery using DAQD on the hexapod robot:
 ```python3 hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000```
 
+3. For analysis and visualization of results, use:
+```python3 vis_repertoire_hexapod.py --archive_519.dat --plot_type grid``` to view the resulting repertoire.
+This is also an interactive plot which shows the resulting skill/behaviour in a rendered simulation when you select a skill in the repertoire.
+and
+```python3 analysis.py``` to view the performance curves for QD-score and coverage metrics.
 
 ## Documentation on code structure
 ### Main algorithm class MBQD
@@ -42,6 +48,6 @@ However, for probablistic ensemble which performs the ensemble in parallelized m
 - However, if there is only one observation input i.e [batch_size, input_dim], there is a conditional if check (if len(input.shape) < 3) to replicate the input across all models in the ensemble and reshape it to [ensemble_size, batch_size, input_dim].
 
 ## Acknowledgements
-- The QD code is built and modified from the <https://github.com/resibots/pymap_elites repository>.
+- The QD code is built and modified from the <https://github.com/resibots/pymap_elites> repository.
 - Code for dynamics models using probabalistic ensembles is built and modified from the <https://github.com/kzl/lifelong_rl> repository.
 

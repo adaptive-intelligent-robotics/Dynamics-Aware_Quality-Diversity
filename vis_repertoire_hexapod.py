@@ -13,7 +13,7 @@ from src.envs.hexapod_dart.hexapod_env import HexapodEnv
 from src.models.dynamics_models.deterministic_model import DeterministicDynModel
 
 dynamics_model = DeterministicDynModel(48,18,500)
-dynamics_model = ptu.load_model(dynamics_model, "hexapod_detdyn_archcond_trained.pth")
+#dynamics_model = ptu.load_model(dynamics_model, "hexapod_detdyn_archcond_trained.pth")
 env = HexapodEnv(dynamics_model=dynamics_model, render=True, ctrl_freq=100)
 
 def key_event(event, args):
@@ -21,7 +21,6 @@ def key_event(event, args):
         sys.exit(0)
 
 def click_event(event, args):
-
     '''
     # reutrns a list of tupples of x-y points
     click_in = plt.ginput(1,-1) # one click only, should not timeout
@@ -49,11 +48,6 @@ def click_event(event, args):
         #hexapod uni
         #selected_solution = selected_solution.iloc[0, :]
         #selected_ctrl = selected_solution.iloc[8:-2].to_numpy()
-
-        # For panda bullet
-        #print("Selected_solution: ", selected_solution.iloc[0,:])
-        #selected_solution = selected_solution.iloc[0,:]
-        #selected_ctrl = selected_solution.iloc[4:-4].to_numpy()
         
         #print("Selected ctrl shape: ", selected_ctrl.shape) # should be 3661
         print("Selected descriptor bin: " ,selected_x, selected_y)
@@ -109,7 +103,6 @@ if __name__ == "__main__":
                         bins = [p/100 for p in range(101)],
                         labels = [p for p in range(100)])
     
-
     '''
     # hexapod uni
     data['bd1_bin']=pd.cut(x = data.iloc[:,1],
@@ -132,10 +125,7 @@ if __name__ == "__main__":
                         labels = [p for p in range(100)])
 
     '''
-    
 
-    
-    
     #cmap = matplotlib.cm.get_cmap('Spectral') # Getting a list of color values
     #data['color_dict'] = pd.Series({k:cmap(1) for k in data['scaled_x']})
     
