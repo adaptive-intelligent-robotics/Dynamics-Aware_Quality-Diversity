@@ -1,8 +1,8 @@
 # Dynamics-Aware Quality-Diversity (DA-QD)
-Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Paper]() 
+Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Project Webpage](https://sites.google.com/view/da-qd/home) [Paper](https://arxiv.org/abs/2109.08522)
 
 
-Performing Quality-Diversity (QD) optimisation using learnt models, to reduce the number of evaluations/trials/sampled needed during QD skill discovery.
+Performing Quality-Diversity (QD) optimisation using learnt models, to reduce the number of evaluations/trials/samples needed during QD skill discovery.
 DA-QD allows QD to be performed in imagination, to discover and only executte novel or higher-performing skills.
 
 ## Dependencies and Installation
@@ -14,16 +14,20 @@ If you want to build this without a singularity container, all the dependencies 
 1. Create a directory or identify directory in which to store results (i.e. $tmp_dir) 
 
 2. Run the line below for skill-discovery using DAQD on the hexapod robot:
-```python3 hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000```
+```python3 run_scripts/hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000```
 
 3. For analysis and visualization of results, use:
-
-```python3 vis_repertoire_hexapod.py --archive_519.dat --plot_type grid``` to view the resulting repertoire.
-This is also an interactive plot which shows the resulting skill/behaviour in a rendered simulation when you select a skill in the repertoire.
+```
+python3 vis_repertoire_hexapod.py --archive_519.dat --plot_type grid
+```
+This plots the resulting repertoire. This is also an interactive plot which shows the resulting skill/behaviour in a rendered simulation when you select a skill in the repertoire on the plot using the mouse.
 
 and
+```
+python3 analysis.py
+```
+This plots the performance curves for QD-score and coverage metrics. You will need to go into this file to specify the paths of the directories of the log_file.dat from your different variants of your experiments.
 
-```python3 analysis.py``` to view the performance curves for QD-score and coverage metrics.
 
 ## Documentation on code structure
 ### Main algorithm class MBQD
