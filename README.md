@@ -1,5 +1,9 @@
 # Dynamics-Aware Quality-Diversity (DA-QD)
-Project repository for Dynamics-Aware Quality-Diversity (DA-QD). [Project Webpage](https://sites.google.com/view/da-qd/home) [Paper](https://arxiv.org/abs/2109.08522)
+Project repository for Dynamics-Aware Quality-Diversity (DA-QD).
+
+[Project Webpage](https://sites.google.com/view/da-qd/home)
+
+[Paper](https://arxiv.org/abs/2109.08522)
 
 
 Performing Quality-Diversity (QD) optimisation using learnt models, to reduce the number of evaluations/trials/samples needed during QD skill discovery.
@@ -14,7 +18,9 @@ If you want to build this without a singularity container, all the dependencies 
 1. Create a directory or identify directory in which to store results (i.e. $tmp_dir) 
 
 2. Run the line below for skill-discovery using DAQD on the hexapod robot:
-```python3 run_scripts/hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000```
+```
+python3 run_scripts/hexapod_omni_daqd_main.py --num_cores 30 --log_dir $tmp_dir --dump_period 5000
+```
 
 3. For analysis and visualization of results, use:
 ```
