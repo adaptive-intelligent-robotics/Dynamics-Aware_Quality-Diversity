@@ -34,10 +34,9 @@ From: airl_lab/default/airl_env:base_2.0
    exit 0 #NOTFORFINAL - the lines below this "exit" will be executed only when building the final image
    #==================================================================================
 
-   #CLONEHERE
    echo "cloning model_based_qd repository"
    cd /git
-   git clone --recurse-submodules https://oauth:vB8mcibZBSdtQEW4EsCN@gitlab.doc.ic.ac.uk/AIRL/research_projects/bryan_lim/model_based_qd.git
+   git clone --recurse-submodules https://github.com/adaptive-intelligent-robotics/Dynamics-Aware_Quality-Diversity.git model_based_qd/
    
 
 
